@@ -1,0 +1,38 @@
+@font-face { font-family: 'krinkes';
+             src: url('../typesets/krinkes.ttf') format('truetype'); }
+
+.vertical-center {
+    min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+    min-height: 100vh; /* These two lines are counted as one :-)       */
+
+    display: flex;
+    align-items: center;
+}
+
+.panel-transparent {
+    background: none;
+}
+
+.panel-transparent .panel-heading{
+    background: rgba(122, 130, 136, 0.9)!important;
+}
+
+.panel-transparent .panel-body{
+    background: rgba(46, 51, 56, 0.9)!important;
+}
+
+.background-wall {
+    background-image: url("../images/background_wall2.jpeg");
+    background-size:100% auto;
+}
+
+.icon-size {
+    font-size: 50px;
+}
+
+.background-logo {
+    font-family: krinkes, arial;
+    color: white;
+    font-size: 150px;
+}
+
