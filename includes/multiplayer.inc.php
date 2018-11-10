@@ -1,12 +1,13 @@
-<div class="row" style="background-color:yellow">
-    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xs-offset-3 col-sm-offset-3 col-md-offset-3 col-lg-offset-3">    
-        <p>Anzeige</p>     
+<div class="row vertical-center">
+    <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+        <div id="obj_trash" class="game-trash">ffffffff</div>
+    </div>
+    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+        <div class="panel panel-primary panel-transparent panel-fullscreen">
+            <div class="panel-body vertical-center">
+            </div>
+        </div>
     </div>
 </div>
 
-<script>
-    $(document).ready(function () {
-        alert("Hier startet das Spiel und eine neues wird im oberen Bereich angzeigt");
-    });
-</script>
 
