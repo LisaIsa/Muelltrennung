@@ -9,6 +9,7 @@
         <script src='js/bootstrap.min.js'></script>
         <script src='js/menuJS.js'></script>
 
+        <link rel='stylesheet' href='css/popper.css'>
         <link rel='stylesheet' href='css/bootstrap.min.css'>
         <link rel='stylesheet' href='css/style.css'>
     </head>

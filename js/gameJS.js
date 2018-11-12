@@ -2,7 +2,7 @@ $(document).ready(function () {
 
     setInterval(function () {
         var browserHeight = $(window).height();
-        var trashYPos = $('#obj_trash').position().top;
+        var trashYPos = $('#img_trash').position().top;
 
         if (trashYPos >= browserHeight) {
             trashYPos = 0;
@@ -11,24 +11,31 @@ $(document).ready(function () {
             trashYPos = trashYPos + 1;
         }
 
-        $('#obj_trash').css('top', trashYPos);
+        $('#img_trash').css('top', trashYPos);
     }, 10);
 
     $(document).keydown(function (event) {
-        var trashWidth = $('#obj_trash').width();
-        var trashXPosLC = $('#obj_trash').position().left;
-        var trashXPosRC = trashXPosLC + trashWidth/2;
-        var sidebarXPos = $('#area_sidebar').position().left;
+        var trashWidth = $('#img_trash').width();
+        var trashXPosLC = $('#img_trash').position().left;
+        var trashXPosRC = trashXPosLC + trashWidth;
+        //var sidebarXPos = $('#area_sidebar').position().left;
+        var jumpDistance = $('#area_bin_green').width();
+        var lowerLimit = -1 *(jumpDistance);
+        var upperLimit = jumpDistance;
+        var tolerance = 1;
         var KeyID = event.keyCode;
 
+        console.log(trashXPosLC);
+        console.log(jumpDistance);
+
         if (KeyID == 65) { // A (links)
-            if (trashXPosLC >= 0) {
-                trashXPosLC = trashXPosLC - 20;
+            if (( trashXPosLC + tolerance ) > lowerLimit) {
+                trashXPosLC = trashXPosLC - jumpDistance;
             }
         }
         if (KeyID == 68) { // D (rechts)
-            if (trashXPosRC <= sidebarXPos) {
-                trashXPosLC = trashXPosLC + 20;
+            if (( trashXPosLC - tolerance ) < upperLimit) {
+                trashXPosLC = trashXPosLC + jumpDistance;
             }
         }
 
@@ -36,7 +43,7 @@ $(document).ready(function () {
         event.returnValue = false;
 
         // Das Element auf der x-Achse veschieben
-        $('#obj_trash').css('left', trashXPosLC);
+        $('#img_trash').css('left', trashXPosLC);
         return event.returnValue;
     });
 
