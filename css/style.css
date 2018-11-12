@@ -1,6 +1,12 @@
 @font-face { font-family: 'krinkes';
              src: url('../typesets/krinkes.ttf') format('truetype'); }
 
+body {
+    margin: 0; 
+    height: 100%; 
+    overflow: hidden
+}
+
 .vertical-center {
     min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
     min-height: 100vh; /* These two lines are counted as one :-)       */
@@ -36,13 +42,9 @@
     font-size: 150px;
 }
 
- div.game-trash {
-  position: absolute;  
-  top: 200px;
-  left: 500px; 
-  width: 100px;
-  height: 100px;
-  border-radius: 50px;
-  background-color: #ff00ff;
+.img-trash {
+    position: absolute;
+    width: 15%;
+    height: auto;
+    left: 50%;
 }
-

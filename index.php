@@ -8,7 +8,7 @@ switch ($action) {
     case '.':
         break;
     default:
-        include 'main.php';
+        include 'includes/main.inc.php';
         include 'includes/menu.inc.php';
         break;
 }

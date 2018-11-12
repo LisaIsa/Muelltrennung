@@ -9,8 +9,9 @@
         <div class="panel panel-primary panel-transparent">
             <div class="panel-body">         
                 <form>
-                    <div class="form-group form-group-lg">
-                        <input id="tbx_spieler" class="form-control input-lg" placeholder="Benutzername">
+                    <div id="area_spieler" class="form-group form-group-lg has-feedback">
+                        <input id="tbx_spieler" class="form-control input-lg" placeholder="Name" autofocus>
+                         <span id="icon_spieler" class="glyphicon glyphicon-remove form-control-feedback invisible" aria-hidden="true"></span>
                     </div>
                 </form>
                 <div class="btn-group btn-block" role="group">
