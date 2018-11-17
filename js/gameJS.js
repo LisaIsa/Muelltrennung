@@ -5,6 +5,7 @@ $(document).ready(function () {
         var trashYPos = $('#img_trash').position().top;
 
         if (trashYPos >= browserHeight) {
+            checkBin();
             trashYPos = 0;
         }
         else {
@@ -15,37 +16,101 @@ $(document).ready(function () {
     }, 10);
 
     $(document).keydown(function (event) {
-        var trashWidth = $('#img_trash').width();
-        var trashXPosLC = $('#img_trash').position().left;
-        var trashXPosRC = trashXPosLC + trashWidth;
-        //var sidebarXPos = $('#area_sidebar').position().left;
-        var jumpDistance = $('#area_bin_green').width();
-        var lowerLimit = -1 *(jumpDistance);
-        var upperLimit = jumpDistance;
-        var tolerance = 1;
         var KeyID = event.keyCode;
-
-        console.log(trashXPosLC);
-        console.log(jumpDistance);
+        var activeBin = getActiveBin();
+        var deleteStat = activeBin + " img:last-child";
+        var imgStat = '';
+        var currentYPos = 0;
+        var limitYPos = $('#area_bin').position().top;
+        var heightTrash = 0;
 
         if (KeyID == 65) { // A (links)
-            if (( trashXPosLC + tolerance ) > lowerLimit) {
-                trashXPosLC = trashXPosLC - jumpDistance;
+            currentYPos = $('#img_trash').position().top;
+            heightTrash = $('#img_trash').height();
+            if (currentYPos < (limitYPos-heightTrash)) {
+                imgStat = '<img id="img_trash" src="images/trash_ketchup.png" class="img-responsive img-trash" style="top:' + currentYPos + ';">';
+                $(deleteStat).remove();
+                $(getNewBin(activeBin, "left")).append(imgStat);
             }
         }
+
         if (KeyID == 68) { // D (rechts)
-            if (( trashXPosLC - tolerance ) < upperLimit) {
-                trashXPosLC = trashXPosLC + jumpDistance;
+            currentYPos = $('#img_trash').position().top;
+            heightTrash = $('#img_trash').height();
+            if (currentYPos < (limitYPos-heightTrash)) {
+                imgStat = '<img id="img_trash" src="images/trash_ketchup.png" class="img-responsive img-trash" style="top:' + currentYPos + ';">';
+                $(deleteStat).remove();
+                $(getNewBin(activeBin, "right")).append(imgStat);
             }
         }
-
-        event.cancelBubble = true;
-        event.returnValue = false;
-
-        // Das Element auf der x-Achse veschieben
-        $('#img_trash').css('left', trashXPosLC);
-        return event.returnValue;
     });
 
+    function getActiveBin() {
+        if ($("#area_brown:has(#img_trash)").length > 0) {
+            return "#area_brown";
+        }
+
+        if ($("#area_blue:has(#img_trash)").length > 0) {
+            return "#area_blue";
+        }
+
+        if ($("#area_green:has(#img_trash)").length > 0) {
+            return "#area_green";
+        }
+
+        if ($("#area_yellow:has(#img_trash)").length > 0) {
+            return "#area_yellow";
+        }
+
+        if ($("#area_black:has(#img_trash)").length > 0) {
+            return "#area_black";
+        }
+    }
+
+    function getNewBin(activeBin, move) {
+        if (activeBin == "#area_brown" && move == "right") {
+            return "#area_blue";
+        }
+
+        if (activeBin == "#area_blue" && move == "right") {
+            return "#area_green";
+        }
+
+        if (activeBin == "#area_green" && move == "right") {
+            return "#area_yellow";
+        }
+
+        if (activeBin == "#area_yellow" && move == "right") {
+            return "#area_black";
+        }
+
+        if (activeBin == "#area_black" && move == "right") {
+            return "#area_black";
+        }
+
+        if (activeBin == "#area_brown" && move == "left") {
+            return "#area_brown";
+        }
+
+        if (activeBin == "#area_blue" && move == "left") {
+            return "#area_brown";
+        }
+
+        if (activeBin == "#area_green" && move == "left") {
+            return "#area_blue";
+        }
+
+        if (activeBin == "#area_yellow" && move == "left") {
+            return "#area_green";
+        }
+
+        if (activeBin == "#area_black" && move == "left") {
+            return "#area_green";
+        }
+    }
+    
+    function checkBin(){
+        console.log(getActiveBin());
+    }
 
 });
