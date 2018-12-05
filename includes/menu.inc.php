@@ -1,26 +1,41 @@
-<div class="row">
-    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xs-offset-2 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
-        <h1 class="text-right background-logo">TRASH IT!</h1>
-    </div>
-</div> 
-
 <div class="row vertical-center">
-    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xs-offset-2 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
+
+        <div class="panel panel-primary panel-transparent">
+            <div class="panel-heading txt_manual text-center">
+                <h3 class="no_border no_margin">Spielanleitung</h3>
+            </div>
+            <div class="panel-body">         
+                <p class="txt_black text-center">Wirf den Müll in den richtigen Mülleimer, indem du den Müll nach links (A) oder nach rechts (D) verschiebst. Die Farben der Tonnen haben folgende Bedeutung:</p>
+                <p class="txt_yellow text-center">Gelb - Gelber Sack</p>
+                <p class="txt_blue text-center">Blau - Altpapier</p>
+                <p class="txt_brown text-center">Braun - Biomüll</p>
+                <p class="txt_green text-center">Grün - Behälterglas</p>
+                <p class="txt_black text-center">Schwarz - Restmüll</p>
+            </div>
+        </div>
+
         <div class="panel panel-primary panel-transparent">
             <div class="panel-body">         
                 <form>
                     <div id="area_spieler" class="form-group form-group-lg has-feedback">
                         <input id="tbx_spieler" class="form-control input-lg" placeholder="Name" autofocus>
-                         <span id="icon_spieler" class="glyphicon glyphicon-remove form-control-feedback invisible" aria-hidden="true"></span>
+                        <span id="icon_spieler" class="glyphicon glyphicon-remove form-control-feedback invisible" aria-hidden="true"></span>
                     </div>
                 </form>
                 <div class="btn-group btn-block" role="group">
-                    <button id="btn_spielen" type="button" class="btn btn-primary btn-lg btn-block">
+                    <button id="btn_spielen" type="button" class="btn btn-lg btn-block">
                         <span class="glyphicon glyphicon-expand" aria-hidden="true"></span>   
                         <strong> SPIELEN</strong>                                           
                     </button >
                 </div> 
             </div>
         </div>
+    </div>
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        <div class="background-logo">
+            <p>TRASH IT!</p>
+        </div>
+        <img src="images/bin_main.png">
     </div>
 </div> 

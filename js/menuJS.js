@@ -15,7 +15,7 @@ $(document).ready(function () {
     function startGame() {
         if ($('#tbx_spieler').val() != '') {
             $('#body').load('includes/multiplayer.inc.php', function () {
-                $('#area_sidebar').load('includes/ranking.inc.php', function () {
+                $('#area_sidebar').load('includes/sidebar.inc.php', function () {
                     $.getScript("js/rankingJS.js");
                 });
                 $.getScript("js/gameJS.js");
