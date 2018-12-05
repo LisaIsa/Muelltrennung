@@ -2,10 +2,11 @@
 
 $action = filter_input(INPUT_POST, 'action');
 
-$db_action = filter_input(INPUT_POST, 'db_action');
+error_log($action);
 
 switch ($action) {
-    case '.':
+    case 'getRanking':
+        include 'queries/getRanking.inc.php';
         break;
     default:
         include 'includes/main.inc.php';
