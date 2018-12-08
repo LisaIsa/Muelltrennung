@@ -1,8 +1,9 @@
 <!--hier wird die Tabelle für die Rangliste erstellt -->
-<div id="pnl_right" class="panel panel-primary panel-transparent panel-fullscreen">
-    <div class="panel-body vertical-center">
+<div id="pnl_sidebar" class="panel panel-primary panel-transparent panel-fullscreen">
+    <div class="panel-body vertical-center no_padding">
+        <div id="area_container_sidebar">
         <div id="area_next_trash" class="backgound_white area_next_trash">
-            <img id="img_trash" src="images/trash_ketchup.png" class="img-responsive img-trash center-block">
+            <img id="img_trash" src="images/trash_ketchup.png" class="img-responsive img-trash-next center-block">
         </div>
 
         <div id="area_ranking" class="area_ranking">
@@ -17,6 +18,7 @@
                 <tbody id="tbl_ranking_body">
                 </tbody>
             </table>
+        </div>
         </div>
     </div>
 </div>

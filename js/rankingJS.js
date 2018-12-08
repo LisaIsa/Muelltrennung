@@ -17,7 +17,7 @@ $(document).ready(function () {
                 //es werden drei Spalten (Platz, Spielername, Hoechstpunktzahl) gefüllt
                 var cols = "";
                 cols += '<td>' + platz + '</th>';
-                cols += '<td>' + val.Spielername + '</td>';
+                cols += '<td>' + val.Name + '</td>';
                 cols += '<td>' + val.Hoechstpunktzahl + '</td></tr>';
 
                 //in die Reihe werden die Werte der Spalten hinzgefügt

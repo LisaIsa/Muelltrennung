@@ -1,8 +1,8 @@
 <?php
     ## Baue eine Verbindung zu der Datenbank TrashIt auf
-    $db = new SQLite3('TrashIt.db') or die;
+    $db = new SQLite3('TrashItDB.db') or die;
     ## In der Variable $queryRangliste wird das Statement gespeichert, welches die 10 besten SPieler mit deren Punktzahl aus der Datenbank holt 
-    $queryRangliste= "SELECT Spielername, Hoechstpunktzahl FROM spieler ORDER BY Hoechstpunktzahl DESC LIMIT 10";
+    $queryRangliste= "SELECT Name, Hoechstpunktzahl FROM spieler ORDER BY Hoechstpunktzahl DESC LIMIT 10";
    
     ## Wenn die Query ausgeführt werden kann, wird es in der Variable $resultRangliste gespeichert
     if ($resultRangliste=$db->query($queryRangliste))
