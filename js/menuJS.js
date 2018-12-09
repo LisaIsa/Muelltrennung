@@ -28,7 +28,6 @@ $(document).ready(function () {
                 //kann der Request nicht ausgeführt werden, so wird ein Alter ausgegeben
                 error: function (request, error)
                 {
-                    console.log("Query nicht erfolgreich ausgeführt");
                     alert("FEHLER!!! Request: " + JSON.stringify(request));
                 }
             });

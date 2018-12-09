@@ -13,6 +13,7 @@ switch ($action) {
         include 'queries/setPlayer.inc.php';
         break;
     case 'getPlayer':
+        $player = filter_input(INPUT_POST, 'player');
         include 'queries/getPlayer.inc.php';
         break;
     default:
