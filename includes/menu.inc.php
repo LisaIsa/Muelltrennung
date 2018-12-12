@@ -1,4 +1,4 @@
-<div class="row vertical-center">
+<div id="area_menu" class="row vertical-center">
     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
 
         <div class="panel panel-primary panel-transparent">
@@ -38,4 +38,21 @@
         </div>
         <img src="images/bin_main.png">
     </div>
+    
+
 </div> 
+  <div id="mdl_search_player" class="modal fade in" role="dialog" data-backdrop="static">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+        <div class="modal-body">
+            <div class="center-block">
+                <div class="loader"></div> 
+                <p class="text-center">Gegenspieler wird gesucht!</p>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-warning">Abbrechen</button> 
+        </div>
+    </div>
+  </div>
+</div>

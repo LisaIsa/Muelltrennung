@@ -8,7 +8,7 @@ $(document).ready(function () {
 
         if (KeyID == 13) { // return
             event.preventDefault();
-            startGame();
+            loginPlayer();
         }
     });
 
@@ -40,36 +40,37 @@ $(document).ready(function () {
     }
 
     function searchPlayer() {
-        setInterval(function () {
-            $.ajax({
-                type: "POST",
-                url: "index.php",
-                data: {
-                    action: "getPlayer"
-                },
-                dataType: 'json',
-                success: function (data) {
-                    $.each(data, function (index, val) {
-                        if(val.SpielerId != ""){
-                            startGame();
-                        }
-                    });
-                },
-                error: function (request, error)
-                {
-                    alert("FEHLER!!! Request: " + JSON.stringify(request));
-                }
-            });
-        }, 1000);
+        $('#mdl_search_player').modal('show');
+//        setInterval(function () {
+//            $.ajax({
+//                type: "POST",
+//                url: "index.php",
+//                data: {
+//                    action: "getPlayer"
+//                },
+//                dataType: 'json',
+//                success: function (data) {
+//                    $.each(data, function (index, val) {
+//                        if(val.SpielerId != ""){
+//                            startGame();
+//                        }
+//                    });
+//                },
+//                error: function (request, error)
+//                {
+//                    alert("FEHLER!!! Request: " + JSON.stringify(request));
+//                }
+//            });
+//        }, 1000);
     }
-    
-    function startGame(){
+
+    function startGame() {
         $('#body').load('includes/multiplayer.inc.php', function () {
-               $('#area_sidebar').load('includes/sidebar.inc.php', function () {
-                 $.getScript("js/rankingJS.js");
-             });
-             $.getScript("js/gameJS.js");
+            $('#area_sidebar').load('includes/sidebar.inc.php', function () {
+                $.getScript("js/rankingJS.js");
             });
+            $.getScript("js/gameJS.js");
+        });
     }
 
     $('[data-toggle="popover"]').popover();
