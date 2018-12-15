@@ -4,7 +4,7 @@ $db = new SQLite3('TrashItDB.db') or die;
    
 $player=$_GET['player'];
 ## In der Variable $queryAnzahlSpieler wird das Statement gespeichert, welches alle Spielernamen aus der Datenbank holt, die den übergebenen Spielernamen enthalten
-$queryGetSpieler= "Select name from Spieler where SpielId=(SELECT SpielId FROM spieler '$player') and Name <> '$player'";	
+$queryGetSpieler= "Select name from Spieler where IstOnline= 1 IstImSpiel=0 and Name <> '$player'";	
 
   if ($resultSpieler=$db->query($queryGetSpieler))
     {

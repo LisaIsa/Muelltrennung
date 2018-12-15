@@ -18,13 +18,20 @@ if ($resultSpielId = $db->query($querySpielId)) {
     ## Anzahl der Datensätze herausfinden, die den Benutzernamen enthalten
     $rowcountSpielId = $rowSpielId['SpielVorhanden'];
     if ($rowcountSpielId == 0) {
-        # In der Variable $queryInsertGame wird das Statement gespeichert, 
-        # welches ein neues Spiel in der Tabelle Spiel anlegt und die zugehörigen
-        # Spieler speichert
+        ## In der Variable $queryInsertGame wird das Statement gespeichert, 
+        ## welches ein neues Spiel in der Tabelle Spiel anlegt und die zugehörigen
+        ## Spieler speichert
         $queryInsertGame = "Insert INTO Spiel (SpielerEins, SpielerZwei) VALUES ('$player1', '$player2')";
-        # Query $queryInsertGame wird ausgeführt 
-        $db->exec($queryInsertGame); 
+        ## Query $queryInsertGame wird ausgeführt 
+        $db->exec($queryInsertGame);
     }
+
+    ## in der Variable $queryPlaysGame wird die Query gespeichert, die die 
+    ## Spalte "IstImSpiel" in der Tabelle Spiel der beiden Spieler auf 1 setzt,
+    ## weil diese sich gerade im Spiel befinden
+    $queryPlaysGame = "UPDATE Spieler SET IstImSpiel=1 where Name in ('$player1', '$player2')";
+    ## Query $queryInsertGame wird ausgeführt 
+    $db->exec($queryPlaysGame);
 }
 
 # Verbindung zur Datenbank beenden	
