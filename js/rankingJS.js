@@ -1,4 +1,4 @@
-// ajax-Request, durch den die besten 10 Spieler mit der Punktzahl geholt werden 
+// ajax-Request, durch den die besten 5 Spieler mit der Punktzahl geholt werden 
 $(document).ready(function () {  
     $.ajax({
         url: "index.php",
@@ -11,7 +11,7 @@ $(document).ready(function () {
             $.each(data, function (index, val) {
                 var platz = index + 1;
                 //eine neue Reihe wird für die Tabelle erstellt 
-                var newRow = $('<tr class="info">');
+                var newRow = $('<tr class="background_orange">');
                 //es werden drei Spalten (Platz, Spielername, Hoechstpunktzahl) gefüllt
                 var cols = "";
                 cols += '<td>' + platz + '</th>';

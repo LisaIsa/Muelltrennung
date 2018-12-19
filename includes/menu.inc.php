@@ -24,7 +24,7 @@
                     </div>
                 </form>
                 <div class="btn-group btn-block" role="group">
-                    <button id="btn_spielen" type="button" class="btn btn-lg btn-block">
+                    <button id="btn_play_game" type="button" class="btn btn-lg btn-block btn-play-color">
                         <span class="glyphicon glyphicon-expand" aria-hidden="true"></span>   
                         <strong> SPIELEN</strong>                                           
                     </button >
@@ -38,8 +38,6 @@
         </div>
         <img src="images/bin_main.png">
     </div>
-    
-
 </div> 
   <div id="mdl_search_player" class="modal fade in" role="dialog" data-backdrop="static">
   <div class="modal-dialog modal-sm">
@@ -47,11 +45,11 @@
         <div class="modal-body">
             <div class="center-block">
                 <div class="loader"></div> 
-                <p class="text-center">Gegenspieler wird gesucht!</p>
+                <p class="text-center"><strong>Gegenspieler wird gesucht!</strong></p>
             </div>
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-warning">Abbrechen</button> 
+            <button id="btn_close_mdl" type="button" class="btn btn-warning">Abbrechen</button> 
         </div>
     </div>
   </div>

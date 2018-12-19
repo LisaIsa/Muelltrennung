@@ -36,10 +36,11 @@ if ($rowcountSpieler == 0) {
         # Anzahl der Datensätze herausfinden, die den Benutzernamen enthalten
         $rowcountSpielerOnline = $rowSpieler['SpielerOnline'];
         if ($rowcountSpielerOnline == 0) {
-            $queryUpdateOnlineStatus = "UPDATE Spieler SET IstOnline=1 and Punkte=0 where Name=$player";
+            $queryUpdateOnlineStatus = "UPDATE Spieler SET IstOnline=1 and Punkte=0 where Name='$player'";
             $db->query($queryUpdateOnlineStatus);
+            echo '0'; #wenn die Anmeldung erfolgreich war, wird eine 0 zurückgegeben
         } else {
-            echo 'Der Spieler ist bereits online. Bitte suche dir einen anderen Spielernamen aus!';
+            echo '1'; #wenn die Anmeldung fehlgeschlagen ist, wird eine 1 zurückgegeben
         }
     }
 }
